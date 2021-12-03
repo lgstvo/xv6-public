@@ -6,6 +6,7 @@
 #include "memlayout.h"
 #include "mmu.h"
 #include "proc.h"
+#include "systime.h"
 
 int
 sys_fork(void)
@@ -88,4 +89,9 @@ sys_uptime(void)
   xticks = ticks;
   release(&tickslock);
   return xticks;
+}
+
+int sys_time(void){
+  int system_total = time.system_end - time.system_start;
+  return system_total;
 }
