@@ -23,10 +23,11 @@ int main(int argc, char *argv[])
     int start_count = uptime();
     time();
 
+    // from init.c
     int pid = fork();
     if (pid < 0)
     {
-        printf(stdout, "time: error executing command\n");
+        printf(stdout, "erro na chamada de sistema\n");
         exit();
     }
     else if (pid == 0)
