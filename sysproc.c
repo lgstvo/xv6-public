@@ -92,6 +92,7 @@ sys_uptime(void)
 }
 
 int sys_time(void){
-  int system_total = time.system_end - time.system_start;
+  int system_total = time.total_time;
+  time.total_time = 0;
   return system_total;
 }

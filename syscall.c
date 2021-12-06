@@ -143,6 +143,7 @@ syscall(void)
     time.system_start = sys_uptime();
     curproc->tf->eax = syscalls[num]();
     time.system_end = sys_uptime();
+    time.total_time += time.system_end - time.system_start;
   } else {
     cprintf("%d %s: unknown sys call %d\n",
             curproc->pid, curproc->name, num);

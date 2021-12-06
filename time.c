@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
         exit();
     }
     int start_count = uptime();
+    time();
 
     int pid = fork();
     if (pid < 0)
@@ -40,11 +41,11 @@ int main(int argc, char *argv[])
     int sys_time = time();
     int total_time = uptime() - start_count;
     int user_time = total_time - sys_time;
-    printf(stdout, "Tempo de usuário:\n");
+    printf(stdout, "Tempo de usuário: ");
     display_time(user_time);
-    printf(stdout, "Tempo de sistema:\n");
+    printf(stdout, "Tempo de sistema: ");
     display_time(sys_time);
-    printf(stdout, "Tempo total:\n");
+    printf(stdout, "Tempo total: ");
     display_time(total_time);
     exit();
 }

@@ -182,6 +182,9 @@ UPROGS=\
 	_wc\
 	_zombie\
 	_time\
+	_testusertime\
+	_testsystemtime\
+	_testmixtime\
 
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)
